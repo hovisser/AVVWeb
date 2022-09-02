@@ -1,8 +1,4 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string;
-}>();
-</script>
+
 
 <template>
   <div class="greetings">
@@ -14,7 +10,12 @@ defineProps<{
     </h3>
   </div>
 </template>
-
+<script setup lang="ts" source="./home.ts">
+  defineProps<{
+    msg: string;
+  }>();
+  
+</script>
 <style scoped>
 h1 {
   font-weight: 500;
