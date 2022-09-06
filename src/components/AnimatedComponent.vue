@@ -1,24 +1,22 @@
-<script lang="ts">
-import { onMounted, ref } from "vue";
-export default {
-  name: "AnimatedComponent",
-  props: {
-    animationType: {
+<script lang="ts" setup>
+import { onMounted, ref, computed, defineProps, defineComponent } from "vue";
+
+const props = defineProps({
+  animationType:  {
       type: String,
       required: false,
       default: "fade",
-    },
   },
-  setup() {
-    const target = ref();
-    const animate = ref(false);
+});
 
-    const observer = new IntersectionObserver(
+const target = ref();
+const animate = ref(false);
+
+const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if(entry.target.id === target.value.id) {
-            console.log("valu", entry.target, target.value, entry.isIntersecting); 
-           animate.value = entry.isIntersecting;                                
+            animate.value = entry.isIntersecting;                                
           }
            
         });
@@ -26,18 +24,11 @@ export default {
       {
         threshold: 0,
       }
-    );
+);
 
-    onMounted(() => {
+onMounted(() => {
       observer.observe(target.value);
-    });
-
-    return {
-      animate,
-      target,
-    };
-  },
-};
+ });
 </script>
 
 <template>
