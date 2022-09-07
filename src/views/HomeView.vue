@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AnimatedComponent from "@/components/AnimatedComponent.vue";
 import HeaderComponent from "@/components/header/HeaderComponent.vue";
+import WhatsappComponent from "@/components/contact/WhatsappComponent.vue";
 import { ref } from "vue";
 
 const showInfo = ref(false);
@@ -82,21 +83,42 @@ const showTab = ref('none');
               </div>
             </Transition>
             <Transition name="slide-fade">
-              <div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='whatsapp'" @mouseleave="showTab='none';">
-                <div class="card" style="width: 20rem; margin-top: 5px;">
-                  <div class="card-body">
-                    <form>
-                      <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Onderwerp</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Hallo ik wil graag contact opnemen">
-                        </div>
+              <WhatsappComponent  v-if="showTab==='whatsapp'" @mouseleave="showTab='none';" /> <!-- v-if="showTab==='whatsapp'" -->
+              <!--<div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='whatsapp'"  @mouseleave="showTab='none';"> 
+                <div class="whatsapp container">
+                    <div class="row whatsapp_title">
+                      <div class="col-1">
+                        <img class="whatsapp_profile rounded-circle" src="../assets/logo.svg" alt="Business logo" />
                       </div>
-                    </form>
-                    <a class="btn btn-primary" href="https://wa.me/31618663746?text=I'm%20interested%20in%20your%20car%20for%20sale" >chat!</a>
-                  </div>
+                      <div class="col-6 col-sm-auto">
+                        <h6 class="whatsapp_profile_name ">Amarins</h6>
+                      </div>
+                    </div>
+                    <div class="row whatsapp_content">
+                      <div class="col">
+                        
+                      </div>
+                      <div class="col">
+                        
+                      </div>
+                    </div>
+                    <div class="row whatsapp_form">
+                      <form>
+                        <div class="form-group row">
+                          <div class="col-2 col-sm-1">
+                            <img  class="whatsapp_icon" src="../assets/smile.svg" alt="" />
+                          </div>
+                          <div class="col-8 col-sm-10">
+                            <input type="text" class="form-control form-control-m whatsapp_input_text" id="colFormLabelSm" placeholder="Typ een bericht">
+                          </div>
+                          <div class="col-2 col-sm-1">
+                            <img  class="whatsapp_icon" src="../assets/send.svg" alt="" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
                 </div>
-              </div>
+              </div>-->
             </Transition>
             <Transition name="slide-fade">
               <div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='discord'" @mouseleave="showTab='none';">
