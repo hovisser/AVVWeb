@@ -2,6 +2,7 @@
 import AnimatedComponent from "@/components/AnimatedComponent.vue";
 import HeaderComponent from "@/components/header/HeaderComponent.vue";
 import WhatsappComponent from "@/components/contact/WhatsappComponent.vue";
+import MailCompontent from "@/components/contact/MailCompontent.vue";
 import { ref } from "vue";
 
 const showInfo = ref(false);
@@ -53,7 +54,8 @@ const showTab = ref('none');
           </div>
           <div class="content">
             <Transition name="slide-fade">
-              <div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='mail'" @mouseleave="showTab='none';">
+              <MailCompontent  v-if="showTab==='mail'"  @mouseleave="showTab='none';" />
+              <!--<div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='mail'" @mouseleave="showTab='none';">
                 <div class="card email-card" style="width: 20rem; margin-top: 5px;">
                   <div class="card-body">
                     <h5 class="card-title">Laat een bericht achter:</h5>
@@ -71,7 +73,7 @@ const showTab = ref('none');
                     </span>
                   </div>
                 </div>
-              </div>    
+              </div>-->
             </Transition>
             <Transition name="slide-fade">
               <div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='linked'" @mouseleave="showTab='none';">
@@ -83,42 +85,7 @@ const showTab = ref('none');
               </div>
             </Transition>
             <Transition name="slide-fade">
-              <WhatsappComponent  v-if="showTab==='whatsapp'" @mouseleave="showTab='none';" /> <!-- v-if="showTab==='whatsapp'" -->
-              <!--<div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='whatsapp'"  @mouseleave="showTab='none';"> 
-                <div class="whatsapp container">
-                    <div class="row whatsapp_title">
-                      <div class="col-1">
-                        <img class="whatsapp_profile rounded-circle" src="../assets/logo.svg" alt="Business logo" />
-                      </div>
-                      <div class="col-6 col-sm-auto">
-                        <h6 class="whatsapp_profile_name ">Amarins</h6>
-                      </div>
-                    </div>
-                    <div class="row whatsapp_content">
-                      <div class="col">
-                        
-                      </div>
-                      <div class="col">
-                        
-                      </div>
-                    </div>
-                    <div class="row whatsapp_form">
-                      <form>
-                        <div class="form-group row">
-                          <div class="col-2 col-sm-1">
-                            <img  class="whatsapp_icon" src="../assets/smile.svg" alt="" />
-                          </div>
-                          <div class="col-8 col-sm-10">
-                            <input type="text" class="form-control form-control-m whatsapp_input_text" id="colFormLabelSm" placeholder="Typ een bericht">
-                          </div>
-                          <div class="col-2 col-sm-1">
-                            <img  class="whatsapp_icon" src="../assets/send.svg" alt="" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-              </div>-->
+              <WhatsappComponent :contact-number="31618663746" v-if="showTab==='whatsapp'"  /> <!-- v-if="showTab==='whatsapp'"  -->              
             </Transition>
             <Transition name="slide-fade">
               <div class="d-grid gap-4 d-sm-flex justify-content-sm-center" v-if="showTab==='discord'" @mouseleave="showTab='none';">
