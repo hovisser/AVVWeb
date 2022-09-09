@@ -39,8 +39,6 @@ const props = defineProps({
 
 const whatsApp = ref();
 
-
-
 const whatsappState = ref(ProfileState.Online);
 const inputWhatsapp = ref();
 
