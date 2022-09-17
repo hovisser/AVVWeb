@@ -2,19 +2,15 @@
     position: relative;
     width: 200px;
     height: 200px;
-    transition: transform .2s ease;
+    //transition: transform .2s ease;
     cursor: pointer;
 }
   
 /* [3] Finally, transforming the image when container gets hovered */
-.logo_main:hover {
+/*.logo_main:hover {
     transform: scale(1.05);
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));
-}
-
-
-
-
+}*/
 
 .slide-fade-enter-active {
     transition: all 0.5s ease-out;
@@ -32,12 +28,15 @@
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.8s ease;
+  transition: all 0.5s ease;
  
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-
+  transform: translateY(-10px) scale(0.1);
 }
+
+
+

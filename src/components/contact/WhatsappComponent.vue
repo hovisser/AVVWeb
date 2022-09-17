@@ -194,6 +194,7 @@ onMounted(() => {
     $whatsapp_bubble_answer_bg: #d9fdd3;
     $whatsapp_bubble_answer_bordercolor: $whatsapp_bubble_answer_bg;
 
+    $whatsapp_text: #000;
     $whatsapp_text_subcolor: #667781;
 
     .whatsapp {
@@ -207,6 +208,7 @@ onMounted(() => {
         box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px;
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight: 100;
+        color: $whatsapp_text;
         max-width: 40em;
         text-align: left;
 
